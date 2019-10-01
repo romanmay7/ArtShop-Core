@@ -1,0 +1,146 @@
+[
+  {
+    "Id": 0,
+    "Category": "Poster",
+    "Size": "48\" x 36\"",
+    "Price": 55.00,
+    "Title": "The Fellowship of the Ring",
+    "ArtDescription": "Lord of the Rings Theme Art",
+    "ArtDating": "2018",
+    "ArtId": "A2",
+    "Artist": "Tom Miatke"
+  },
+
+  {
+    "Id": 0,
+    "Category": "Poster",
+    "Size": "48\" x 36\"",
+    "Price": 79.99,
+    "Title": "The High Couch Of Silistra",
+    "ArtDescription": "Fantasy Art",
+    "ArtDating": "1998",
+    "ArtId": "B-379",
+    "Artist": "Boris Vallejo"
+  },
+
+  {
+    "Id": 0,
+    "Category": "Digital",
+    "Size": "11\"x 19\"",
+    "Price": 60.00,
+    "Title": "Divided Allegiance,",
+    "ArtDescription": "Cover for the novel “Divided Allegiance,” by Elizabeth Moon",
+    "ArtDating": "2018",
+    "ArtId": "A5",
+    "Artist": "Todd Lockwood"
+  },
+
+  {
+    "Id": 0,
+    "Category": "Acrylics",
+    "Size": "16\" x 20\"",
+    "Price": 89.99,
+    "Title": "DRAGON DISH",
+    "ArtDescription": "Dragon Art",
+    "ArtDating": "1985",
+    "ArtId": "A6",
+    "Artist": "Todd Lockwood"
+  },
+
+  {
+    "Id": 0,
+    "Category": "Poster",
+    "Size": "48\" x 36\"",
+    "Price": 89.99,
+    "Title": "Incubus",
+    "ArtDescription": "Fantasy Art",
+    "ArtDating": "1998",
+    "ArtId": "B-26",
+    "Artist": "Boris Vallejo"
+  },
+
+  {
+    "Id": 0,
+    "Category": "Poster",
+    "Size": "15\" x 22\"",
+    "Price": 30.00,
+    "Title": "PHOENIX ENDANGERED",
+    "ArtDescription": "Sequel to Phoenix Rising by Mercedes Lackey and James Mallory",
+    "ArtDating": "2008",
+    "ArtId": "A7",
+    "Artist": "Todd Lockwood"
+  },
+
+  {
+    "Id": 0,
+    "Category": "Fantasy Art Print",
+    "Size": "48\" x 46\"",
+    "Price": 57.87,
+    "Title": "Plenarius",
+    "ArtDescription": "Fantasy Art, Angel, Forest RPG  Celestial Planar Praying",
+    "ArtDating": "2017",
+    "ArtId": "C-5",
+    "Artist": "Carol Philips"
+  },
+
+
+  {
+    "Id": 0,
+    "Category": "Poster",
+    "Size": "48\" x 36\"",
+    "Price": 89.99,
+    "Title": "Forever Moments",
+    "ArtDescription": "Fantasy Art",
+    "ArtDating": "1998",
+    "ArtId": "B-184",
+    "Artist": "Boris Vallejo"
+  },
+
+  {
+    "Id": 0,
+    "Category": "Poster",
+    "Size": "48\" x 36\"",
+    "Price": 89.99,
+    "Title": "Birth",
+    "ArtDescription": "Fantasy Art",
+    "ArtDating": "1998",
+    "ArtId": "B-42",
+    "Artist": "Boris Vallejo"
+  },
+
+  {
+    "Id": 0,
+    "Category": "Fantasy Art Print",
+    "Size": "48\" x 46\"",
+    "Price": 57.87,
+    "Title": "Shara and the Haunted Village",
+    "ArtDescription": "Shara and the Haunted Village Cover art ",
+    "ArtDating": "2017",
+    "ArtId": "C-8",
+    "Artist": "Carol Philips"
+  },
+
+  {
+    "Id": 0,
+    "Category": "Poster",
+    "Size": "48\" x 36\"",
+    "Price": 89.99,
+    "Title": "Vampire’s Kiss",
+    "ArtDescription": "Fantasy Art",
+    "ArtDating": "1998",
+    "ArtId": "B-40",
+    "Artist": "Boris Vallejo"
+  },
+
+  {
+    "Id": 0,
+    "Category": "Poster",
+    "Size": "48\" x 36\"",
+    "Price": 89.99,
+    "Title": "All Is Well",
+    "ArtDescription": "Fantasy Art",
+    "ArtDating": "1998",
+    "ArtId": "B-9261",
+    "Artist": "Boris Vallejo"
+  }
+]

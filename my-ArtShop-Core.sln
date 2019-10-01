@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "my-ArtShop-Core", "my-ArtShop-Core.csproj", "{AA79ABAB-560D-4AA5-BF6E-82F12BE19D25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA79ABAB-560D-4AA5-BF6E-82F12BE19D25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA79ABAB-560D-4AA5-BF6E-82F12BE19D25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA79ABAB-560D-4AA5-BF6E-82F12BE19D25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA79ABAB-560D-4AA5-BF6E-82F12BE19D25}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3D8349ED-70CB-4022-BDF9-05C202F323B0}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+{
+  "ConnectionStrings": {
+    "ArtShopConnectionString": "server=(localdb)\\v13.0;Database=ArtShopDB;Integrated Security=true;MultipleActiveResultSets=true;"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning"
+    }
+  }
+}
