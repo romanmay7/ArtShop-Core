@@ -7,5 +7,10 @@
       "Default": "Information",
       "Microsoft": "Warning"
     }
+  },
+  "Tokens": {
+    "Key": "22e22344tfrfdf454grg",
+    "Issuer": "localhost",
+    "Audience": "users"
   }
 }

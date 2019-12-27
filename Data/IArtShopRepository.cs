@@ -12,5 +12,6 @@ namespace myArtShopCore.Data
         Order GetOrderById(int id);
 
         bool SaveAll();
+        void AddEntity(object model);
     }
 }

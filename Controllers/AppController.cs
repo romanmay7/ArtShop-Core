@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using myArtShopCore.Data;
 using myArtShopCore.Services;
 using myArtShopCore.ViewModels;
@@ -62,7 +63,7 @@ namespace myArtShopCore.Controllers
             ViewBag.Title = "About Us";
             return View();
         }
-
+        [Authorize]
         public IActionResult Shop()
         {
             //var results = _context.Products

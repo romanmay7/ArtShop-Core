@@ -42,6 +42,7 @@ namespace myArtShopCore.Controllers
             }
             catch(Exception ex)
             {
+
                 _logger.LogError($"Failed to get products:{ex}");
                 return BadRequest("Bad request");
             }

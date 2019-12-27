@@ -30,7 +30,7 @@ namespace my_ArtShop_Core
             using(var scope=scopeFactory.CreateScope())
            {
                 var seeder =scope.ServiceProvider.GetService<ArtShopSeeder>();
-                seeder.Seed();
+                seeder.SeedAsync().Wait();
             }
         }
 

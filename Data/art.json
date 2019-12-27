@@ -46,19 +46,6 @@
     "ArtId": "A6",
     "Artist": "Todd Lockwood"
   },
-
-  {
-    "Id": 0,
-    "Category": "Poster",
-    "Size": "48\" x 36\"",
-    "Price": 89.99,
-    "Title": "Incubus",
-    "ArtDescription": "Fantasy Art",
-    "ArtDating": "1998",
-    "ArtId": "B-26",
-    "Artist": "Boris Vallejo"
-  },
-
   {
     "Id": 0,
     "Category": "Poster",
@@ -83,31 +70,6 @@
     "Artist": "Carol Philips"
   },
 
-
-  {
-    "Id": 0,
-    "Category": "Poster",
-    "Size": "48\" x 36\"",
-    "Price": 89.99,
-    "Title": "Forever Moments",
-    "ArtDescription": "Fantasy Art",
-    "ArtDating": "1998",
-    "ArtId": "B-184",
-    "Artist": "Boris Vallejo"
-  },
-
-  {
-    "Id": 0,
-    "Category": "Poster",
-    "Size": "48\" x 36\"",
-    "Price": 89.99,
-    "Title": "Birth",
-    "ArtDescription": "Fantasy Art",
-    "ArtDating": "1998",
-    "ArtId": "B-42",
-    "Artist": "Boris Vallejo"
-  },
-
   {
     "Id": 0,
     "Category": "Fantasy Art Print",
@@ -118,18 +80,6 @@
     "ArtDating": "2017",
     "ArtId": "C-8",
     "Artist": "Carol Philips"
-  },
-
-  {
-    "Id": 0,
-    "Category": "Poster",
-    "Size": "48\" x 36\"",
-    "Price": 89.99,
-    "Title": "Vampire’s Kiss",
-    "ArtDescription": "Fantasy Art",
-    "ArtDating": "1998",
-    "ArtId": "B-40",
-    "Artist": "Boris Vallejo"
   },
 
   {

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using myArtShopCore.Data.Entities;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace myArtShopCore.Data
 {
-    public class ArtShopContext:DbContext
+    public class ArtShopContext:IdentityDbContext<StoreUser>
     {
         public ArtShopContext(DbContextOptions<ArtShopContext>options):base(options)
         {
