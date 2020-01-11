@@ -40,13 +40,23 @@ namespace myArtShopCore.Data
             return _context.Products.Where(p => p.Category == category).ToList();
         }
 
-        public IEnumerable<Order> GetAllOrders()
+        public IEnumerable<Order> GetAllOrders(bool includeItems)
         {
             try
             {
-                _logger.LogInformation("GetAllOrders");
-                return _context.Orders.Include(o=>o.Items)
-                    .ThenInclude(i=>i.Product).ToList();
+                if(includeItems)
+                {
+                    _logger.LogInformation("GetAllOrders");
+
+                    return _context.Orders
+                        .Include(o => o.Items)
+                        .ThenInclude(i => i.Product)
+                        .ToList();
+                }
+                else
+                {
+                    return _context.Orders.ToList();
+                }
             }
             catch (Exception ex)
             {
@@ -55,11 +65,38 @@ namespace myArtShopCore.Data
             }
         }
 
-        public Order GetOrderById(int id)
+        public IEnumerable<Order> GetAllOrdersByUser(string username,bool includeItems)
         {
-            return _context.Orders.Include(o => o.Items)
+            try
+            {
+                if (includeItems)
+                {
+                    _logger.LogInformation("GetAllOrders");
+
+                    return _context.Orders
+                        .Where(o=>o.User.UserName==username)
+                        .Include(o => o.Items)
+                        .ThenInclude(i => i.Product)
+                        .ToList();
+                }
+                else
+                {
+                    return _context.Orders.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Failed to get all products: {ex}");
+                return null;
+            }
+        }
+        public Order GetOrderById(string username,int id)
+        {
+            return _context.Orders
+                .Include(o => o.Items)
                 .ThenInclude(i => i.Product)
-                .Where(o => o.Id == id).FirstOrDefault();
+                .Where(o => o.Id == id && o.User.UserName==username)
+                .FirstOrDefault();
         }
 
         public bool SaveAll()
@@ -70,6 +107,18 @@ namespace myArtShopCore.Data
         public void AddEntity(object model)
         {
             _context.Add(model);
+        }
+
+        public void AddOrder(Order newOrder)
+        {
+           //Convert new product to lookup of product
+           foreach(var item in newOrder.Items)
+            {
+                item.Product = _context.Products.Find(item.Product.Id);
+
+            }
+
+            AddEntity(newOrder);
         }
     }
 }

@@ -27,7 +27,7 @@ namespace myArtShopCore.Controllers
             return View(results);
         }
 
-        [HttpGet("contact")]
+        [HttpGet("App/Contact")]
         public IActionResult Contact()
         {
             ViewBag.Title = "Contact Us";
@@ -37,7 +37,7 @@ namespace myArtShopCore.Controllers
             return View();
         }
 
-        [HttpPost("contact")]
+        [HttpPost("App/Contact")]
         public IActionResult Contact(ContactViewModel model)
         {
             ViewBag.Title = "Contact Us";
@@ -63,7 +63,8 @@ namespace myArtShopCore.Controllers
             ViewBag.Title = "About Us";
             return View();
         }
-        [Authorize]
+        //[Authorize]
+        //[HttpGet("App/Shop/")]
         public IActionResult Shop()
         {
             //var results = _context.Products

@@ -1,24 +1,34 @@
 ﻿@model IEnumerable<Product>
+@section Scripts {
+    <script src="~/clientapp/dist/runtime-es5.js"></script>
+    <script src="~/clientapp/dist/polyfills-es5.js"></script>
+    <script src="~/clientapp/dist/styles-es5.js"></script>
+    <script src="~/clientapp/dist/vendor-es5.js"></script>
+    <script src="~/clientapp/dist/main-es5.js"></script>
+}
+@*<h1>Shop</h1>*@
 <h1>Shop</h1>
-<p>Count:@Model.Count()</p>
-<div class="row">
-    @foreach (var p in Model)
-    {
-    <div class="col-md-3">
-        <div class="border bg-light rounded p-1">
-            <img src="~/img/@(p.ArtId).jpg" class="img-fluid" alt="@(p.Title)"/>
-            <h6>@p.Category -- @p.Size</h6>
-            <ul class="product-props">
-                <li>Price:@p.Price</li>
-                <li>Artist:@p.Artist</li>
-                <li>Title:@p.Title</li>
-                <li>Description:@p.ArtDescripton</li>
+<the-shop></the-shop>
 
-            </ul>
-            <button class="btn btn-success" id="buyButton">Buy</button>
+@*<p>Count:@Model.Count()</p>
+    <div class="row">
+        @foreach (var p in Model)
+        {
+        <div class="col-md-3">
+            <div class="border bg-light rounded p-1">
+                <img src="~/img/@(p.ArtId).jpg" class="img-fluid" alt="@(p.Title)"/>
+                <h6>@p.Category -- @p.Size</h6>
+                <ul class="product-props">
+                    <li>Price:@p.Price</li>
+                    <li>Artist:@p.Artist</li>
+                    <li>Title:@p.Title</li>
+                    <li>Description:@p.ArtDescripton</li>
 
+                </ul>
+                <button class="btn btn-success" id="buyButton">Buy</button>
+
+            </div>
         </div>
-    </div>
 
-    }
-</div>
+        }
+    </div>*@

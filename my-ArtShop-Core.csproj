@@ -26,4 +26,9 @@
   <None Include="node_modules/**" />
 </ItemGroup>
 
+<ItemGroup>
+  <Folder Include="wwwroot\clientapp\" />
+  <Folder Include="wwwroot\clientapp\dist\" />
+</ItemGroup>
+
 </Project>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using myArtShopCore.Data.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -16,5 +17,6 @@ namespace myArtShopCore.ViewModels
         public string OrderNumber { get; set; }
 
         public ICollection<OrderItemViewModel> Items { get; set; }
+
     }
 }

@@ -1,0 +1,22 @@
+﻿<h3>Shopping Cart</h3>
+<div>#/Items:{{data.order.items.length}}</div>
+<div>Subtotal:{{data.order.subtotal | currency:"USD":true}}</div>
+<table>
+  <thead>
+      <tr>
+          <td>Product</td>
+          <td>Quantity</td>
+          <td>Price</td>
+          <td>Total</td>
+      </tr>
+  </thead>
+    <tbody>
+        <tr *ngFor="let o of data.order.items">
+          <td>{{o.productCategory}}-{{o.productTitle}}</td>
+          <td>{{o.quantity}}</td>
+          <td>{{o.unitPrice | currency:"USD":true}}</td>
+          <td>{{(o.unitPrice *o.quantity) | currency:"USD":true}}</td>
+</tbody>
+</table>
+<!--<a routerLink="Checkout" class="btn btn-success" *ngIf="data.order.items.length > 0">Checkout</a>-->
+<button class="btn btn-success" *ngIf="data.order.items.length > 0" (click)="onCheckout()">Checkout</button>

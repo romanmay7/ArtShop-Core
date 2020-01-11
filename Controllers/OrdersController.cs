@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using myArtShopCore.Data;
@@ -22,20 +23,26 @@ namespace myArtShopCore.Controllers
         private readonly IArtShopRepository _repository;
         private readonly ILogger<OrdersController> _logger;
         private readonly IMapper _mapper;
+        private readonly UserManager<StoreUser> _userManager;
 
-        public OrdersController(IArtShopRepository repository, ILogger<OrdersController> logger,IMapper mapper)
+        public OrdersController(IArtShopRepository repository, ILogger<OrdersController> logger,IMapper mapper,UserManager<StoreUser> userManager)
         {
             _repository = repository;
             _logger = logger;
             _mapper = mapper;
+            _userManager = userManager;
+            
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Order>> Get()
+        public ActionResult<IEnumerable<Order>> Get(bool includeItems=true)
         {
             try
             {
-                return Ok(_mapper.Map<IEnumerable<Order>, IEnumerable<OrderViewModel> >(_repository.GetAllOrders()));
+                var username = User.Identity.Name;
+                var results = _repository.GetAllOrdersByUser(username,includeItems);
+
+                return Ok(_mapper.Map<IEnumerable<Order>, IEnumerable<OrderViewModel> >(_repository.GetAllOrders(includeItems)));
             }
             catch(Exception ex)
             {
@@ -45,11 +52,14 @@ namespace myArtShopCore.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public IActionResult Get(int id)
+        public IActionResult Get(int id, bool includeItems = true)
         {
             try
             {
-                var order = _repository.GetOrderById(id);
+                var username = User.Identity.Name;
+                var results = _repository.GetAllOrdersByUser(username, includeItems);
+
+                var order = _repository.GetOrderById(username,id);
                 if (order != null)
                 {
                     //using IMapper to map Order OrderViewModel,because we always want to return a view model
@@ -66,11 +76,12 @@ namespace myArtShopCore.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]OrderViewModel model)
+        public async Task<IActionResult> Post([FromBody]OrderViewModel model)
         {
             //add it to the db
             try
             {
+                _logger.LogError($"Model:{model}");
                 if (ModelState.IsValid)
                 {
                     //Dont NEED to do a conversion mannualy because we use IMapper instead
@@ -89,8 +100,12 @@ namespace myArtShopCore.Controllers
                         newOrder.OrderDate = DateTime.Now;
                     }
 
+      
+
                     //adding to repository
-                    _repository.AddEntity(newOrder);
+
+                    // _repository.AddEntity(newOrder);
+                    _repository.AddOrder(newOrder);
 
                     //mapping  back from OrderModel to OrderViewModel
                     //Dont NEED to do a conversion mannualy because we use IMapper instead
@@ -114,7 +129,7 @@ namespace myArtShopCore.Controllers
                     return BadRequest(ModelState);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _logger.LogError($"Failed to save a new order:{ex}");
             }
