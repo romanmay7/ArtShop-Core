@@ -30,5 +30,17 @@
   <Folder Include="wwwroot\clientapp\" />
   <Folder Include="wwwroot\clientapp\dist\" />
 </ItemGroup>
+  
+  <!-- before publish happens run whats inside
+  There are several such ways you can do
+  You can choose to run something BeforeBuild
+  AfterBuild
+  AfterPublish etc.
+  -->
+  <Target Name="MyPublishScripts" BeforeTargets="BeforePublish">
+    <Exec Command="npm install"></Exec>
+    <Exec Command="gulp"></Exec>
+    <Exec Command="ng build"></Exec>
+  </Target>
 
 </Project>

@@ -11,11 +11,11 @@
 </head>
 <body>
     <header class="container">
-        <nav class="navbar navbar-dark bg-dark navbar-expand-md" >
-            
+        <nav class="navbar navbar-dark bg-dark navbar-expand-md">
+
             <h1 class="navbar-brand"><i class="fa fa-shield"></i> Fanatsy Art Shop</h1>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#theMenu">
-               <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div id="theMenu" class="navbar-collapse collapse">
                 <ul class="navbar-nav">
@@ -52,11 +52,25 @@
         @RenderBody()
     </section>
     <footer class="text-center"><div>Roman Mayerson@2019 Fantasy Art Shop</div></footer>
-    
-  <script src="~/node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="~/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="~/js/index.js"></script>
-  @RenderSection("scripts",false)
-</body>
 
-</html>
+    <!-- javascript generally has stuff that manipulates contents on the website. hence load it towards the end of the page. -->
+    <environment names="Development">
+        <script src="~/lib/jQuery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/index.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="//ajax.aspnetcdn.com/ajax/jquery/jquery-3.2.1.min.js"
+                asp-fallback-src="~/lib/jQuery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"></script>
+        <script src="//ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"></script>
+        <script src="~/js/index.js"></script>
+        <script src="~/dist/artshop.min.js" asp-append-version="true"></script>
+    </environment>
+    @* scripts section is not required. if one of the pages creates a section called scripts, then put it here in the layout page*@
+          @RenderSection("scripts",false)
+        </body>
+
+        </html>
